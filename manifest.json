@@ -1,15 +1,21 @@
 {
-  "short_name": "RSS-PWA",
-  "name": "RSS news by Progressive Web Application",
+  "name": "GOATNews by Progressive Web Application",
+  "short_name": "GOATNews",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ECEFF1",
+  "background_color": "#ECEFF1",
   "icons": [
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+
+    {
+      "src": "react.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png"
     }
-  ],
-  "start_url": "https://deepinsc.github.io/rss-pwa/",
-  "display": "standalone",
-  "theme_color": "#61dafb",
-  "background_color": "#282c34"
+  ]
 }
