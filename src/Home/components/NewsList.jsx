@@ -16,7 +16,7 @@ class NewsList extends Component {
 
     componentDidMount() {
         this.setState({loading: true, news:[]});
-        axios.get(`http://localhost:3000/api/offline/category/business`).then(
+        axios.get(`http://18.191.243.106:3000/api/offline/category/business`).then(
             res => {
                 this.setState({news: res.data.slice(0,3), loading: false})
             }
@@ -28,7 +28,7 @@ class NewsList extends Component {
 
     onTabChange = (key) => {
         this.setState({loading: true, news:[]});
-        axios.get(`http://localhost:3000/api/offline/category/${key}`).then(
+        axios.get(`http://18.191.243.106:3000/api/offline/category/${key}`).then(
             res => {
                 this.setState({news: res.data.slice(0,3), loading: false})
             }

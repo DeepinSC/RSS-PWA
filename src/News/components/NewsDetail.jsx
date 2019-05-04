@@ -46,7 +46,7 @@ class NewsDetail extends Component {
         if (req.result) {
           that.setState({currentNews: req.result});
         } else {
-          axios.get(`http://localhost:3000/api/offline/${id}`, {params: params}).then(
+          axios.get(`http://18.191.243.106:3000/api/offline/${id}`, {params: params}).then(
               res => {
                 that.setState({
                   currentNews: res.data,
@@ -64,7 +64,7 @@ class NewsDetail extends Component {
   }
 
   handleFollow = () => {
-    axios.put(`http://localhost:3000/api/user/${UserStore.user.uid}`,
+    axios.put(`http://18.191.243.106:3000/api/user/${UserStore.user.uid}`,
         {name: this.state.currentNews.source, type:"source"}).then(res => {
       this.setState({following: !this.state.following});
     }).catch(err =>

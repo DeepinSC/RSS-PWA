@@ -30,7 +30,7 @@ class NewsList extends Component {
   parseSearch = (props) => {
     this.setState({loading: true});
     if (!props.location.search) {
-      axios.get("http://localhost:3000/api/offline/").then(
+      axios.get("http://18.191.243.106:3000/api/offline/").then(
         res => {
           this.setState({
             news: res.data || [],
@@ -47,7 +47,7 @@ class NewsList extends Component {
       const search = props.location.search;
       const params = new URLSearchParams(search);
       if (params.get('category')) {
-        axios.get(`http://localhost:3000/api/offline/category/${params.get('category')}`).then(
+        axios.get(`http://18.191.243.106:3000/api/offline/category/${params.get('category')}`).then(
           res => {
             this.setState({
               news: res.data || [],
@@ -63,7 +63,7 @@ class NewsList extends Component {
       }
 
       else if (params.get('news')) {
-        axios.get(`http://localhost:3000/api/offline/search/${params.get('news')}`).then(
+        axios.get(`http://18.191.243.106:3000/api/offline/search/${params.get('news')}`).then(
             res => {
               console.log(res.data);
               this.setState({
@@ -81,7 +81,7 @@ class NewsList extends Component {
       }
 
       else if (params.get('source')) {
-        axios.get(`http://localhost:3000/api/offline/source/${params.get('source')}`).then(
+        axios.get(`http://18.191.243.106:3000/api/offline/source/${params.get('source')}`).then(
             res => {
               this.setState({
                 news: res.data || [],
@@ -112,7 +112,7 @@ class NewsList extends Component {
 
 
   handleFollow = () => {
-    axios.put(`http://localhost:3000/api/user/${UserStore.user.uid}`,
+    axios.put(`http://18.191.243.106:3000/api/user/${UserStore.user.uid}`,
         {name: this.state.category, type: this.getType(this.props)}).then(res => {
       this.setState({following: !this.state.following});
     }).catch(err =>
